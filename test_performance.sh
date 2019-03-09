@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-echo "performance test -> place the 'generator' in the root and run the script"
+echo "performance test --> place the 'generator' in ./tools/ and run the script"
 echo " "
 
 #one
@@ -20,7 +20,7 @@ sum=0
 while [ $count -lt $(expr $case + 1) ]
 do
 	echo "\r-- $count/$case --\c"
-	arg1=$(./generator --flow-one > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
+	arg1=$(./tools/generator --flow-one > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
 	arg2=$(./lem-in -t < 1 | tail -n 2 | head -n 1 | cut -d ' ' -f 2)
 	diff=$(($arg2 - $arg1))
 	sum=$(($sum + $diff))
@@ -40,7 +40,7 @@ sum=0
 while [ $count -lt $(expr $case + 1) ]
 do
 	echo "\r-- $count/$case --\c"
-	arg1=$(./generator --flow-ten > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
+	arg1=$(./tools/generator --flow-ten > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
 	arg2=$(./lem-in -t < 1 | tail -n 2 | head -n 1 | cut -d ' ' -f 2)
 	diff=$(($arg2 - $arg1))
 	sum=$(($sum + $diff))
@@ -60,7 +60,7 @@ sum=0
 while [ $count -lt $(expr $case + 1) ]
 do
 	echo "\r-- $count/$case --\c"
-	arg1=$(./generator --flow-thousand > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
+	arg1=$(./tools/generator --flow-thousand > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
 	arg2=$(./lem-in -t < 1 | tail -n 2 | head -n 1 | cut -d ' ' -f 2)
 	diff=$(($arg2 - $arg1))
 	sum=$(($sum + $diff))
@@ -80,7 +80,7 @@ sum=0
 while [ $count -lt $(expr $case + 1) ]
 do
 	echo "\r-- $count/$case --\c"
-	arg1=$(./generator --big > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
+	arg1=$(./tools/generator --big > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
 	arg2=$(./lem-in -t < 1 | tail -n 2 | head -n 1 | cut -d ' ' -f 2)
 	diff=$(($arg2 - $arg1))
 	sum=$(($sum + $diff))
@@ -100,7 +100,7 @@ sum=0
 while [ $count -lt $(expr $case + 1) ]
 do
 	echo "\r-- $count/$case --\c"
-	arg1=$(./generator --big-superposition > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
+	arg1=$(./tools/generator --big-superposition > 1 && cat 1 | grep "#Here" | cut -d ' ' -f 8 | head -n 1)
 	arg2=$(./lem-in -t < 1 | tail -n 2 | head -n 1 | cut -d ' ' -f 2)
 	diff=$(($arg2 - $arg1))
 	sum=$(($sum + $diff))
