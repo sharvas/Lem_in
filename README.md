@@ -154,7 +154,7 @@ avg moves diff: 0
 
 real    0m0.037s
 user    0m0.022s
-sys        0m0.019s
+sys     0m0.019s
 
 -- 50/50 --
 --flow-ten
@@ -162,7 +162,7 @@ avg moves diff: 0
 
 real    0m0.034s
 user    0m0.022s
-sys        0m0.018s
+sys     0m0.018s
 
 -- 50/50 --
 --flow-thousand
@@ -170,7 +170,7 @@ avg moves diff: 0
 
 real    0m0.080s
 user    0m0.060s
-sys        0m0.031s
+sys     0m0.031s
 
 -- 25/25 --
 --big
@@ -178,7 +178,7 @@ avg moves diff: 0
 
 real    0m0.458s
 user    0m0.394s
-sys        0m0.103s
+sys     0m0.103s
 
 -- 25/25 --
 --big-superposition
@@ -186,5 +186,5 @@ avg moves dif: 6
 
 real    0m1.379s
 user    0m1.274s
-sys        0m0.159s
+sys     0m0.159s
 ```
