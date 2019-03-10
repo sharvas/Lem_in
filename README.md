@@ -68,7 +68,7 @@ Flags `-p -g -t` display information related to the algorithm - discovered paths
 
 ## algorithm and the output
 
-The output of the map example above uses two paths:
+The output of the example map above uses two paths:
 ```
 start -> 1 -> 5 -> 6 -> end
 ```
