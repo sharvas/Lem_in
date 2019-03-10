@@ -182,7 +182,7 @@ sys     0m0.103s
 
 -- 25/25 --
 --big-superposition
-avg moves dif: 6
+avg moves diff: 6
 
 real    0m1.379s
 user    0m1.274s
