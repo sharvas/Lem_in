@@ -140,7 +140,7 @@ depth - 1
 
 The inspiration for the algorithm was taken from the Edmonds–Karp max flow problem-solving algorithm, using a breadth-first search to find paths.
 
-## the script
+## test script
 
 To evaluate the algorithm's performance a shell script was written. Randomly gerenated maps have the expected benchmark, and the script compares the performance (```avg moves diff```). If it is 0, the performance is spot on, if a positive number - the algorithm performed worse by this many turns.
 
