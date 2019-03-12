@@ -10,7 +10,7 @@ number_of_ants
 the_rooms
 the_links
 ```
-The rooms are defined by `name coord_x coord_y`. The links are defined by `name1-name2` and all is broken by comments, which start with `#`. Lines starting with ## are commands (for example marking start/end room).
+The rooms are defined by `name coord_x coord_y`. The links are defined by `name1-name2` and all is broken by comments, which start with `#`. Lines starting with `##` are commands (for example marking start/end room).
 
 An example map:
 ```console
@@ -39,7 +39,7 @@ end-6
 3-start
 ```
 
-The schematic represantation of the map:
+The schematic representation of the map:
 
 ![map](https://github.com/sharvas/lem_in/raw/master/images/map.png)
 
@@ -61,7 +61,7 @@ usage: ./lem-in [-a] [-r] [-l] [-rl] [-p] [-g] [-t] [-all] [-wc] < map.map
     [-wc] display map with comments
 ```
 
-There are several options to display various stages of program execution. For the parsing, `-a` `-r` `-l` flags will show an essential information that was read and `-rl` flag displays what is put in the graph - nodes (rooms) and edges (links).
+There are several options to display various stages of program execution. For the parsing, `-a` `-r` `-l` flags will show essential information that was read and `-rl` flag displays what is put in the graph - nodes (rooms) and edges (links).
 
 Flags `-p` `-g` `-t` display information related to the algorithm - discovered paths, groups of paths and, finally, how many turns did it take to move all the ants through the network.
 
@@ -141,7 +141,7 @@ The inspiration for the algorithm was taken from the **Edmonds–Karp** max flow
 
 ## Test script
 
-To evaluate the algorithm's performance a shell script was written. Randomly gerenated maps have the expected benchmark, and the script compares the performance (`avg moves diff`). If it is 0, the performance is spot on, if a positive number - the algorithm performed worse by this many turns.
+To evaluate the algorithm's performance a shell script was written. Randomly generated maps have the expected benchmark, and the script compares the performance (`avg moves diff`). If it is 0, the performance is spot on, if a positive number - the algorithm performed worse by this many turns.
 
 ```console
 $> ./test_performance.sh
