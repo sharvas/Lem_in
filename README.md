@@ -187,3 +187,5 @@ real    0m1.379s
 user    0m1.274s
 sys     0m0.159s
 ```
+
+The project was completed in a team with [@dfinnis](https://github.com/dfinnis).
