@@ -1,8 +1,8 @@
-# lem_in
+# The Pathfinding / Max Flow algorithm project
 
-This is a pathfinding algorithm project. The goal of the project is to find the fastest way for the number of ants to move through the network of rooms and tunnels.
+The goal of the project is to find the fastest way for the number of 'ants' to move through the network of rooms and tunnels.
 
-The program cannot have memory leaks. All errors must be handled carefully. In no way can the program quit in an unexpected manner (Segmentation fault, bus error, double free, etc). Allowed functions for the mandatory part are `malloc, free, read, write, strerror, perror` and `exit`.
+The program cannot have memory leaks. All errors must be handled carefully. In no way can the program quit in an unexpected manner (Segmentation fault, bus error, double free, etc). Allowed functions for the mandatory part are `malloc`, `free`, `read`, `write`, `strerror`, `perror` and `exit`.
 
 The input is received in the following format:
 ```console
@@ -43,11 +43,11 @@ The schematic represantation of the map:
 
 ![map](https://github.com/sharvas/lem_in/raw/master/images/map.png)
 
-## usage
+## Usage
 
 To compile the project - run `make`. It will compaile an executable `lem-in`. Running it witht an `-h` flag will display the usage:
 ```console
-➜ lem_in ./lem-in -h
+$> ./lem-in -h
 usage: ./lem-in [-a] [-r] [-l] [-rl] [-p] [-g] [-t] [-all] [-wc] < map.map
 
     [-a] display number of ants
@@ -61,12 +61,11 @@ usage: ./lem-in [-a] [-r] [-l] [-rl] [-p] [-g] [-t] [-all] [-wc] < map.map
     [-wc] display map with comments
 ```
 
-There are many options to display various stages of program execution. For the parsing, `-a -r -l` flags will show an essential information that was read and `-rl` flag displays what is put in the graph - nodes (rooms) and edges (links).
+There are several options to display various stages of program execution. For the parsing, `-a` `-r` `-l` flags will show an essential information that was read and `-rl` flag displays what is put in the graph - nodes (rooms) and edges (links).
 
-Flags `-p -g -t` display information related to the algorithm - discovered paths, groups of paths and, finally, how many turns did it take to move all the ants through the network.
+Flags `-p` `-g` `-t` display information related to the algorithm - discovered paths, groups of paths and, finally, how many turns did it take to move all the ants through the network.
 
-
-## algorithm and the output
+## Algorithm and the output
 
 The output of the example map above uses two paths:
 ```
@@ -76,7 +75,7 @@ start -> 1 -> 5 -> 6 -> end
 start -> 3 -> 4 -> 2 -> end
 ```
 ```console
-➜ lem_in ./lem-in < maps/pdf_example3.map
+$> ./lem-in < maps/pdf_example3.map
 ...
 
 L1-1 L2-3
@@ -86,7 +85,7 @@ L1-end L2-end L3-6 L4-2
 L3-end L4-end
 ```
 ```console
-➜ lem_in ./lem-in -g < maps/pdf_example3.map
+$> ./lem-in -g < maps/pdf_example3.map
 ...
 
 The chosen group:
@@ -113,7 +112,7 @@ depth - 2
 The output is in the format `L(ant number)-(room number)`. `L1-1` means ant one in the first room. The algorithm chose to take two paths (**depth of 2**) for 4 ants. For 2 ants it would take only one (**depth of 1**) and the shortest path (`start -> 1 -> 2 -> end`).
 
 ```console
-➜ lem_in ./lem-in < maps/pdf_example3_2ants.map
+$> ./lem-in < maps/pdf_example3_2ants.map
 ...
 
 L1-1
@@ -123,7 +122,7 @@ L2-end
 ```
 
 ```console
-➜ lem_in ./lem-in -g < maps/pdf_example3_2ants.map
+$> ./lem-in -g < maps/pdf_example3_2ants.map
 ...
 
 The chosen group:
@@ -138,14 +137,14 @@ length = 4
 depth - 1
 ```
 
-The inspiration for the algorithm was taken from the Edmonds–Karp max flow problem-solving algorithm, using a breadth-first search to find paths.
+The inspiration for the algorithm was taken from the **Edmonds–Karp** max flow problem-solving algorithm, using a breadth-first search to find paths.
 
-## test script
+## Test script
 
 To evaluate the algorithm's performance a shell script was written. Randomly gerenated maps have the expected benchmark, and the script compares the performance (`avg moves diff`). If it is 0, the performance is spot on, if a positive number - the algorithm performed worse by this many turns.
 
 ```console
-➜  lem_in ./test_performance.sh
+$> ./test_performance.sh
 performance test --> place the 'generator' in ./tools/ and run the script
 
 -- 50/50 --
